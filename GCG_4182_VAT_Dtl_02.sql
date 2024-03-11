@@ -1,0 +1,16 @@
+CREATE TABLE "GCG_4182_VAT_Dtl_02"(
+ "RUNID" BIGINT ,
+ "Key_Box" DOUBLE,
+ "Key_Type" DOUBLE,
+ "Key_Tran_Id" DOUBLE,
+ "Cust_Vend" VARCHAR(7),
+ "Name" VARCHAR(40),
+ "GL_Account" VARCHAR(15),
+ "Reference" VARCHAR(30),
+ "Invoice_Date" DATE,
+ "Description" VARCHAR(30),
+ "Amount" DOUBLE,
+ "Recon_Flag" VARCHAR(2),
+ "Type_Abb" VARCHAR(2),
+ "Type_Name" VARCHAR(15),
+ "TaxCode" CHAR(5));
