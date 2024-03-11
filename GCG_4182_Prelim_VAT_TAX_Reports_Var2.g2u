@@ -1,0 +1,1075 @@
+Program.Sub.ScreenSU.Start
+gui.SS_Form1..create
+gui.SS_Form1..caption("Preliminary VAT Tax Return Reports")
+gui.SS_Form1..size(5850,6040)
+gui.SS_Form1..position(0,0)
+gui.SS_Form1..event(unload,ss_form1_unload)
+gui.SS_Form1..alwaysontop(False)
+gui.SS_Form1..fontname("Arial")
+gui.SS_Form1..fontsize(8)
+gui.SS_Form1..forecolor(0)
+gui.SS_Form1..fontstyle(,,,,)
+gui.SS_Form1..BackColor(-2147483633)
+gui.SS_Form1..controlbox(True)
+gui.SS_Form1..maxbutton(False)
+gui.SS_Form1..minbutton(False)
+gui.SS_Form1..mousepointer(0)
+gui.SS_Form1..moveable(True)
+gui.SS_Form1..sizeable(False)
+gui.SS_Form1..ShowInTaskBar(True)
+gui.SS_Form1..titlebar(True)
+gui.SS_Form1.lbl_dtp1_Begdate.create(label,"Beginning Date",True,1800,200,1,100,135,True,0,Arial,8,-2147483633,0)
+gui.SS_Form1.dtp1_Begdate.create(datepicker)
+gui.SS_Form1.dtp1_Begdate.visible(True)
+gui.SS_Form1.dtp1_Begdate.size(1800,345)
+gui.SS_Form1.dtp1_Begdate.zorder(0)
+gui.SS_Form1.dtp1_Begdate.position(100,335)
+gui.SS_Form1.dtp1_Begdate.enabled(True)
+gui.SS_Form1.dtp1_Begdate.checkbox(False)
+gui.SS_Form1.lbl_dtp2_Enddate.create(label,"Ending Date",True,1800,200,1,1985,135,True,0,Arial,8,-2147483633,0)
+gui.SS_Form1.dtp2_Enddate.create(datepicker)
+gui.SS_Form1.dtp2_Enddate.visible(True)
+gui.SS_Form1.dtp2_Enddate.size(1800,345)
+gui.SS_Form1.dtp2_Enddate.zorder(0)
+gui.SS_Form1.dtp2_Enddate.position(1985,335)
+gui.SS_Form1.dtp2_Enddate.enabled(True)
+gui.SS_Form1.dtp2_Enddate.checkbox(False)
+gui.SS_Form1.lbl_txt1_Country.create(label,"VAT Country Code",True,1800,200,1,100,850,True,0,Arial,8,-2147483633,0)
+gui.SS_Form1.txt1_Country.create(textbox,"",True,1800,330,1,100,1050,True,0,Arial,8,16777215,1)
+gui.SS_Form1.txt1_Country.event(lostfocus,txt1_country_lostfocus)
+gui.SS_Form1.cmd_txt1_Country.create(button)
+gui.SS_Form1.cmd_txt1_Country.caption("^")
+gui.SS_Form1.cmd_txt1_Country.visible(True)
+gui.SS_Form1.cmd_txt1_Country.size(330,330)
+gui.SS_Form1.cmd_txt1_Country.zorder(0)
+gui.SS_Form1.cmd_txt1_Country.position(1985,1050)
+gui.SS_Form1.cmd_txt1_Country.enabled(True)
+gui.SS_Form1.cmd_txt1_Country.fontname("Arial")
+gui.SS_Form1.cmd_txt1_Country.fontsize(8)
+gui.SS_Form1.cmd_txt1_Country.event(click,cmd_txt1_country_click)
+gui.SS_Form1.txt1_CntryName.create(textbox,"",True,5400,330,1,100,1465,True,0,Arial,8,16777215,1)
+gui.SS_Form1.ddl1_Tax.create(dropdownlist)
+gui.SS_Form1.ddl1_Tax.visible(True)
+gui.SS_Form1.ddl1_Tax.size(1800,330)
+gui.SS_Form1.ddl1_Tax.zorder(0)
+gui.SS_Form1.ddl1_Tax.position(100,1880)
+gui.SS_Form1.ddl1_Tax.enabled(True)
+gui.SS_Form1.ddl1_Tax.fontname("Arial")
+gui.SS_Form1.ddl1_Tax.fontsize(8)
+gui.SS_Form1.lbl_txt1_Taxcode.create(label,"Code",True,1800,200,1,100,2295,True,0,Arial,8,-2147483633,0)
+gui.SS_Form1.txt1_Taxcode.create(textbox,"",True,1800,330,1,100,2495,True,0,Arial,8,16777215,1)
+gui.SS_Form1.txt1_Taxcode.event(lostfocus,txt1_taxcode_lostfocus)
+gui.SS_Form1.cmd_txt1_Taxcode.create(button)
+gui.SS_Form1.cmd_txt1_Taxcode.caption("^")
+gui.SS_Form1.cmd_txt1_Taxcode.visible(True)
+gui.SS_Form1.cmd_txt1_Taxcode.size(330,330)
+gui.SS_Form1.cmd_txt1_Taxcode.zorder(0)
+gui.SS_Form1.cmd_txt1_Taxcode.position(1985,2495)
+gui.SS_Form1.cmd_txt1_Taxcode.enabled(True)
+gui.SS_Form1.cmd_txt1_Taxcode.fontname("Arial")
+gui.SS_Form1.cmd_txt1_Taxcode.fontsize(8)
+gui.SS_Form1.cmd_txt1_Taxcode.event(click,cmd_txt1_taxcode_click)
+gui.SS_Form1.txt1_Taxdesc.create(textbox,"",True,5400,330,1,100,2910,True,0,Arial,8,16777215,1)
+gui.SS_Form1.chk1_InclPrior.create(checkbox)
+gui.SS_Form1.chk1_InclPrior.caption("Include Prior Unreconciled")
+gui.SS_Form1.chk1_InclPrior.visible(True)
+gui.SS_Form1.chk1_InclPrior.size(3600,300)
+gui.SS_Form1.chk1_InclPrior.zorder(0)
+gui.SS_Form1.chk1_InclPrior.position(100,3325)
+gui.SS_Form1.chk1_InclPrior.enabled(True)
+gui.SS_Form1.chk1_InclPrior.alignment(0)
+gui.SS_Form1.chk1_InclPrior.fontname("Arial")
+gui.SS_Form1.chk1_InclPrior.fontsize(8)
+gui.SS_Form1.lbl1_Select.create(label,"Select Report Type",True,1800,200,1,100,3710,True,0,Arial,8,-2147483633,0)
+gui.SS_Form1.chk1_Detail.create(checkbox)
+gui.SS_Form1.chk1_Detail.caption("VAT Return Detail")
+gui.SS_Form1.chk1_Detail.visible(True)
+gui.SS_Form1.chk1_Detail.size(1800,300)
+gui.SS_Form1.chk1_Detail.zorder(0)
+gui.SS_Form1.chk1_Detail.position(1465,3910)
+gui.SS_Form1.chk1_Detail.enabled(True)
+gui.SS_Form1.chk1_Detail.alignment(0)
+gui.SS_Form1.chk1_Detail.fontname("Arial")
+gui.SS_Form1.chk1_Detail.fontsize(8)
+gui.SS_Form1.chk1_Summary.create(checkbox)
+gui.SS_Form1.chk1_Summary.caption("VAT Return Summary")
+gui.SS_Form1.chk1_Summary.visible(True)
+gui.SS_Form1.chk1_Summary.size(3600,300)
+gui.SS_Form1.chk1_Summary.zorder(0)
+gui.SS_Form1.chk1_Summary.position(1465,4295)
+gui.SS_Form1.chk1_Summary.enabled(True)
+gui.SS_Form1.chk1_Summary.alignment(0)
+gui.SS_Form1.chk1_Summary.fontname("Arial")
+gui.SS_Form1.chk1_Summary.fontsize(8)
+gui.SS_Form1.chk1_ECSales.create(checkbox)
+gui.SS_Form1.chk1_ECSales.caption("EC Sales List")
+gui.SS_Form1.chk1_ECSales.visible(True)
+gui.SS_Form1.chk1_ECSales.size(1800,300)
+gui.SS_Form1.chk1_ECSales.zorder(0)
+gui.SS_Form1.chk1_ECSales.position(1465,4680)
+gui.SS_Form1.chk1_ECSales.enabled(True)
+gui.SS_Form1.chk1_ECSales.alignment(0)
+gui.SS_Form1.chk1_ECSales.fontname("Arial")
+gui.SS_Form1.chk1_ECSales.fontsize(8)
+gui.SS_Form1.cmd1_Print.create(button)
+gui.SS_Form1.cmd1_Print.caption("Print")
+gui.SS_Form1.cmd1_Print.visible(True)
+gui.SS_Form1.cmd1_Print.size(1000,360)
+gui.SS_Form1.cmd1_Print.zorder(0)
+gui.SS_Form1.cmd1_Print.position(100,5065)
+gui.SS_Form1.cmd1_Print.enabled(True)
+gui.SS_Form1.cmd1_Print.fontname("Arial")
+gui.SS_Form1.cmd1_Print.fontsize(8)
+gui.SS_Form1.cmd1_Print.event(click,cmd1_print_click)
+gui.SS_Form1.dtp1_Begdate.tabstop(true)
+gui.SS_Form1.dtp1_Begdate.tabindex(1)
+gui.SS_Form1.dtp2_Enddate.tabstop(true)
+gui.SS_Form1.dtp2_Enddate.tabindex(2)
+gui.SS_Form1.chk1_InclPrior.tabstop(true)
+gui.SS_Form1.chk1_InclPrior.tabindex(3)
+gui.SS_Form1.chk1_Detail.tabstop(true)
+gui.SS_Form1.chk1_Detail.tabindex(4)
+gui.SS_Form1.chk1_Summary.tabstop(true)
+gui.SS_Form1.chk1_Summary.tabindex(5)
+gui.SS_Form1.chk1_ECSales.tabstop(true)
+gui.SS_Form1.chk1_ECSales.tabindex(6)
+gui.SS_Form1.cmd1_Print.tabstop(true)
+gui.SS_Form1.cmd1_Print.tabindex(7)
+
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Variable.UDT.uSumm.Define("iRunID",String,"runid")
+Variable.UDT.uSumm.Define("sKey_Type",String,"Key_Type")
+Variable.UDT.uSumm.Define("sDescr",String)
+Variable.UDT.uSumm.Define("fAmt",Float,"Amt")
+Variable.uGlobal.uSumm.Declare("uSumm")
+
+Variable.UDT.uDetail.Define("iRunID",String,"runid")
+Variable.UDT.uDetail.Define("sKey_Box",Float,"Key_Box")
+Variable.UDT.uDetail.Define("sKey_Type",Float,"Key_Type")
+Variable.UDT.uDetail.Define("sKey_Tran_Id",FLOAT,"Key_Tran_Id")
+Variable.UDT.uDetail.Define("sCust_Vend",String,"Cust_Vend")
+Variable.UDT.uDetail.Define("sName",String,"Name")
+Variable.UDT.uDetail.Define("sGL_Acct",String,"GL_Acct")
+Variable.UDT.uDetail.Define("sRef",String,"Ref")
+Variable.UDT.uDetail.Define("sIVC_Date",String,"IVC_Date")
+Variable.UDT.uDetail.Define("sDescr",String,"Descr")
+Variable.UDT.uDetail.Define("fAmt",Float,"Amt")
+Variable.UDT.uDetail.Define("sRecon_Flg",String,"Recon_Flg")
+Variable.UDT.uDetail.Define("sType_Abb",String)
+Variable.UDT.uDetail.Define("sType_Name",String)
+Variable.UDT.uDetail.Define("sTaxCode",String)
+Variable.UDT.uDetail.Define("dIVC_Date",Date)
+Variable.uGlobal.uDetail.Declare("uDetail")
+
+Variable.UDT.uCust.Define("iRunID",String,"runid")
+Variable.UDT.uCust.Define("sName",String,"Name")
+Variable.UDT.uCust.Define("sNit_no",String,"Nit_no")
+Variable.UDT.uCust.Define("fAmt",Float,"Amt")
+
+Variable.uGlobal.uCust.Declare("uCust")
+
+Variable.Global.iKey.Declare(Long,0)
+Variable.Global.sTax.declare(string)
+
+Variable.Global.iLogid1.declare(Long,0)
+Variable.Global.iBIRunID1.declare(Long,0)
+
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'Coded by: Jackie Theriot
+'Project Start Date: 10/10/2012
+'Preliminary VAT Tax Report Request
+'Build parameters to pass to cobol program which will build bi files for crystal reports
+' Callwrapper will call cobol program TX0800, mode 8000
+'Issue:  5994
+'Notes:
+'	
+v.uGlobal.uCust.Redim(-1,-1)
+'open connection
+
+F.ODBC.connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.puser,V.Ambient.PPass)
+'gui.SS_Form1..applytranslation
+
+F.Intrinsic.Control.CallSub(Load_droplist)
+Gui.SS_Form1.ddl1_Tax.Text("Tax Code")
+
+
+	Gui.SS_Form1.txt1_cntryname.enabled(false)
+	Gui.SS_Form1.txt1_taxdesc.Enabled(false)
+
+Gui.SS_Form1..show
+'End ==========================================================
+
+
+'	
+
+Program.Sub.Main.End
+
+program.sub.cmd1_print_click.start
+'Start ========================================================
+'Print Button
+V.Local.ic.Declare(Long)
+V.Local.srows.Declare(String)
+V.Local.iord.Declare(Long)
+V.Local.srange.Declare(String)
+V.Local.squery.Declare(String)
+V.Local.sDate1.Declare(String)
+V.Local.sDate2.Declare(String)
+V.local.sSql.declare(String)
+V.local.sret.declare(String)
+V.local.sError.declare(String)
+V.Local.sCode.Declare(String)
+
+'Disappear the screen
+Gui.SS_Form1..Visible(False)
+F.Intrinsic.Control.SetErrorHandler("CMD1_PRINT_CLICK_Err")
+F.Intrinsic.Control.ClearErrors
+
+'This is setting the RunId and identifying the report Id
+F.Global.BI.GetRunID(V.Global.iBIRunID1)
+F.Global.BI.StartLogging(V.Global.iBIRunID1,122,0,"VAT_Tax_Return_Detail_122.rpt",V.Global.iLogid1)
+
+F.Intrinsic.Control.CallSub(Callwrapper)
+
+f.intrinsic.string.format(V.screen.SS_Form1!dtp1_BegDate.value.pervasivedate,"YYYYMMDD",V.local.sDate1)
+f.intrinsic.string.format(V.screen.SS_Form1!dtp2_EndDate.value.pervasivedate,"YYYYMMDD",V.local.sDate2)
+
+V.uGlobal.uSumm.Redim(-1,-1)
+V.uGlobal.uDetail.Redim(-1,-1)
+V.uGlobal.uCust.Redim(-1,-1)
+
+F.Intrinsic.Control.If(V.Screen.SS_Form1!ddl1_Tax.listindex,=,0)
+    		V.Global.sTax.Set("1")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.SS_Form1!ddl1_Tax.listindex,=,1)
+    		V.Global.sTax.Set("2")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.SS_Form1!chk1_Summary.value,=,1)
+	F.Intrinsic.Control.CallSub(Select_bi_vat_summ_01)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.SS_Form1!chk1_Detail.value,=,1)
+	F.Intrinsic.Control.CallSub(Select_bi_vat_detail_02)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.SS_Form1!chk1_ECSales.value,=,1)
+	F.Intrinsic.Control.CallSub(Select_bi_vat_cust_03)
+F.Intrinsic.Control.EndIf
+
+
+F.Intrinsic.Control.If(V.uGlobal.uSumm.UBound,<>,-1)
+' Set values in uSumm udt
+ 		F.Intrinsic.Control.For(V.local.iC,0,V.uGlobal.uSumm.ubound,1)
+			F.Intrinsic.Control.If(V.uGlobal.usumm(v.local.ic)!skey_type,=,"A1")
+				V.uGlobal.uSumm(v.Local.ic)!sdescr.Set("Number of Reconciled Transactions Included")
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.If(V.uGlobal.usumm(v.local.ic)!skey_type,=,"A2")
+				V.uGlobal.uSumm(v.Local.ic)!sdescr.Set("Number of Unreconciled Transactions Included (Within Date Range)")
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.If(V.uGlobal.usumm(v.local.ic)!skey_type,=,"A3")
+				V.uGlobal.uSumm(v.Local.ic)!sdescr.Set("Number of Unreconciled Transactions Included (Prior to Date Range)")
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.If(V.uGlobal.usumm(v.local.ic)!skey_type,=,"A4")
+				V.uGlobal.uSumm(v.Local.ic)!sdescr.Set("Total Number of Transactions Included")
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.If(V.uGlobal.usumm(v.local.ic)!skey_type,=,"B1")
+				V.uGlobal.uSumm(v.Local.ic)!sdescr.Set("VAT Due in this Period on Sales")
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.If(V.uGlobal.usumm(v.local.ic)!skey_type,=,"B2")
+				V.uGlobal.uSumm(v.Local.ic)!sdescr.Set("VAT Due in this Period on EC Acquisitions")
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.If(V.uGlobal.usumm(v.local.ic)!skey_type,=,"B3")
+				V.uGlobal.uSumm(v.Local.ic)!sdescr.Set("Total VAT Due (Sum of Boxes 1 and 2)")
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.If(V.uGlobal.usumm(v.local.ic)!skey_type,=,"B4")
+				V.uGlobal.uSumm(v.Local.ic)!sdescr.Set("VAT Reclaimed in this Period on Purchases")
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.If(V.uGlobal.usumm(v.local.ic)!skey_type,=,"B5")
+				V.uGlobal.uSumm(v.Local.ic)!sdescr.Set("Net VAT to be Paid to Customs or Reclaimed by You")
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.If(V.uGlobal.usumm(v.local.ic)!skey_type,=,"B6")
+				V.uGlobal.uSumm(v.Local.ic)!sdescr.Set("Total Value of Sales, Excluding VAT")
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.If(V.uGlobal.usumm(v.local.ic)!skey_type,=,"B7")
+				V.uGlobal.uSumm(v.Local.ic)!sdescr.Set("Total Value of Purchases, Excluding VAT")
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.If(V.uGlobal.usumm(v.local.ic)!skey_type,=,"B8")
+				V.uGlobal.uSumm(v.Local.ic)!sdescr.Set("Total Value of EC Sales, Excluding VAT")
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.If(V.uGlobal.usumm(v.local.ic)!skey_type,=,"B9")
+				V.uGlobal.uSumm(v.Local.ic)!sdescr.Set("Total Value of EC Purchases, Excluding VAT")
+			F.Intrinsic.Control.EndIf
+		F.intrinsic.control.next(V.local.iC)
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uSumm!iRunID,"RunID")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uSumm!sDescr,"Description")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uSumm!fAmt,"Amount")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.uGlobal.uDetail.UBound,<>,-1)
+' Set values in uDetail udt
+'F.Intrinsic.Debug.Stop
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uDetail!iRunID,"RunID")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uDetail!sGL_Acct,"GL_Account")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uDetail!sRef,"Reference")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uDetail!sIVC_Date,"Invoice_Date")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uDetail!sDescr,"Descr")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uDetail!fAmt,"Amount")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uDetail!sRecon_Flg,"Recon_Flag")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uDetail!sType_Abb,"Type_Abb")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uDetail!sType_Name,"Type_Name")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uDetail!sTaxCode,"TaxCode")
+ 		F.Intrinsic.Control.For(V.local.iC,0,V.uGlobal.uDetail.ubound,1)
+			F.Intrinsic.Control.If(V.uGlobal.udetail(v.local.ic)!skey_type,=,1)
+				V.uGlobal.uDetail(v.Local.ic)!sType_Abb.Set("SI")
+				V.uGlobal.uDetail(v.Local.ic)!sType_Name.Set("Sales Invoice")
+				F.Intrinsic.String.Build(" Select Tax_Zone, Tax_Auth From Order_Hist_Tax_Aux where Ivc_No = '{0}'",V.uGlobal.uDetail(v.Local.ic)!sRef.PSQLFriendly,V.Local.sSql)
+				F.ODBC.Connection!conx.OpenLocalRecordsetRO("rstCode",V.Local.sSql)
+				F.Intrinsic.Control.If(V.ODBC.conx!rstCode.EOF,=,False)
+					F.Intrinsic.String.Build("{0}{1}",V.ODBC.conx!rstCode.FieldValTrim!Tax_zone,V.ODBC.conx!rstCode.FieldValTrim!Tax_Auth,V.Local.sCode)
+					V.uGlobal.uDetail(v.Local.ic)!sTaxCode.Set(V.Local.sCode)
+				F.Intrinsic.Control.Else
+
+				F.Intrinsic.Control.EndIf
+				F.ODBC.conx!rstCode.Close
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.If(V.uGlobal.udetail(v.local.ic)!skey_type,=,2)
+				V.uGlobal.uDetail(v.Local.ic)!sType_Abb.Set("SC")
+				V.uGlobal.uDetail(v.Local.ic)!sType_Name.Set("Sales Credit")
+				F.Intrinsic.String.Build(" Select Tax_Zone, Tax_Auth From Order_Hist_Tax_Aux where Ivc_No = '{0}'",V.uGlobal.uDetail(v.Local.ic)!sRef.PSQLFriendly,V.Local.sSql)
+				F.ODBC.Connection!conx.OpenLocalRecordsetRO("rstCode",V.Local.sSql)
+				F.Intrinsic.Control.If(V.ODBC.conx!rstCode.EOF,=,False)
+					F.Intrinsic.String.Build("{0}{1}",V.ODBC.conx!rstCode.FieldValTrim!Tax_zone,V.ODBC.conx!rstCode.FieldValTrim!Tax_Auth,V.Local.sCode)
+					V.uGlobal.uDetail(v.Local.ic)!sTaxCode.Set(V.Local.sCode)
+				F.Intrinsic.Control.Else
+
+				F.Intrinsic.Control.EndIf
+				F.ODBC.conx!rstCode.Close
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.If(V.uGlobal.udetail(v.local.ic)!skey_type,=,3)
+				V.uGlobal.uDetail(v.Local.ic)!sType_Abb.Set("PI")
+				V.uGlobal.uDetail(v.Local.ic)!sType_Name.Set("Purchase Inv")
+				'****Getting Tax Code*****
+				F.Intrinsic.String.Build("Select Tax_Code from AP_Open_Items where Invoice = '{0}' and Batch_Code = '10'and Tax_Code != ''",V.uGlobal.uDetail(v.Local.ic)!sRef.PSQLFriendly,V.Local.sSql)
+				F.ODBC.Connection!conx.OpenLocalRecordsetRO("rstCode",V.Local.sSql)
+				F.Intrinsic.Control.If(V.ODBC.conx!rstCode.EOF,=,False)
+					V.uGlobal.uDetail(v.Local.ic)!sTaxCode.Set(V.ODBC.conx!rstcode.FieldValTrim!Tax_Code)
+				F.Intrinsic.Control.Else
+
+				F.Intrinsic.Control.EndIf
+				F.ODBC.conx!rstCode.Close
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.If(V.uGlobal.udetail(v.local.ic)!skey_type,=,4)
+				V.uGlobal.uDetail(v.Local.ic)!sType_Abb.Set("PC")
+				V.uGlobal.uDetail(v.Local.ic)!sType_Name.Set("Purchase Crd")
+				'****Getting Tax Code*****
+				F.Intrinsic.String.Build("Select Tax_Code from AP_Open_Items where Invoice = '{0}' and Batch_Code = '12'and Tax_Code != ''",V.uGlobal.uDetail(v.Local.ic)!sRef.PSQLFriendly,V.Local.sSql)
+				F.ODBC.Connection!conx.OpenLocalRecordsetRO("rstCode",V.Local.sSql)
+				F.Intrinsic.Control.If(V.ODBC.conx!rstCode.EOF,=,False)
+					V.uGlobal.uDetail(v.Local.ic)!sTaxCode.Set(V.ODBC.conx!rstcode.FieldValTrim!Tax_Code)
+				F.Intrinsic.Control.Else
+
+				F.Intrinsic.Control.EndIf
+				F.ODBC.conx!rstCode.Close
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.If(V.uGlobal.udetail(v.local.ic)!skey_type,=,5)
+				V.uGlobal.uDetail(v.Local.ic)!sType_Abb.Set("JD")
+				V.uGlobal.uDetail(v.Local.ic)!sType_Name.Set("Journal Dbt")
+			F.Intrinsic.Control.EndIf
+		F.intrinsic.control.next(V.local.iC)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.uGlobal.uCust.UBound,<>,-1)
+' Set values in uCust udt
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uCust!iRunID,"runid")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uCust!sNIT_No,"NIT_Number")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uCust!fAmt,"Amount")
+F.Intrinsic.Control.EndIf
+
+'=========================================================================
+F.Intrinsic.Control.CallSub(Build_z_tables)
+
+'=========================================================================
+F.Intrinsic.Control.If(V.uGlobal.uSumm.Ubound,<>,-1)
+	F.Intrinsic.Control.CallSub(Callbisummary)
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox("No Data Found for Summary Report!", "Missing Data")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.uGlobal.uDetail.Ubound,<>,-1)
+	F.Intrinsic.Control.CallSub(Callbidetail)
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox("No Data Found for Detail Report!", "Missing Data")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.uGlobal.uCust.Ubound,<>,-1)
+	F.Intrinsic.Control.CallSub(Callbiecsales)
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox("No Data Found for EC Sales Report!", "Missing Data")
+F.Intrinsic.Control.EndIf
+
+'=========================================================================
+
+F.Intrinsic.Control.CallSub(Ss_form1_unload)
+
+F.Intrinsic.Control.Label("CMD1_PRINT_CLICK_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Script: GCG_4182_Prelim_VAT_TAX_Reports.gas ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+
+'End ========================================================
+
+
+program.sub.cmd1_print_click.End
+
+Program.Sub.CallWrapper.Start
+'Start ==========================================================
+' Callwrapper
+'==============================================================
+V.local.sError.declare(String)
+V.Local.BegDate.Declare(String)
+V.Local.EndDate.Declare(String)
+V.Local.summary.Declare(String)
+V.Local.detail.Declare(String)
+V.Local.ecsales.Declare(String)
+V.Local.inclprior.Declare(String)
+V.Local.country.Declare(String)
+V.Local.taxcode.Declare(String)
+V.Local.company.Declare(String)
+V.Local.sStatus.Declare(String)
+
+
+F.Intrinsic.Control.SetErrorHandler("Callwrapper_Err")
+F.Intrinsic.Control.ClearErrors
+
+'Parameters for TX0800
+'CMPNY - v.caller.companycode
+'CALLING-PGM - No value
+'CALLED-BY - No value
+'MODE - E (for Extract)
+'PASS-CATG - No value
+'PASS-TYPE - No value
+'PASS-DATA-SRC - No value
+'PASS-GL-ACCT - No value
+'PASS-OE-IVC - No value
+'PASS-SO - No value
+'PASS-SO-SEQ - No value
+'PASS-VENDOR - No value
+'PASS-INVC-NO - No value
+'PASS-AR-AP-CODE - No value
+'PASS-BATCH - No value
+'PASS-IVC-DTE - No value
+'PASS-BOX - No value
+'PASS-REF - No value
+'PASS-DESC - No value
+'PASS-AMT - No value
+'PASS-RUN-FLG - '00'
+'
+'	PASS-RUN-FLG Values
+'		00 = Preliminary
+'		01 = Final
+' 		02 = Reprint
+'
+'PASS-VAT-RETURN-RPT - v.screen.ss_form1!chk1_summary.value
+'PASS-VAT-DETAIL-RPT - v.screen.ss_form1!chk1_detail.value
+'PASS-EC-SALES-RPT - v.screen.ss_form1!chk1_ECSales.value
+'PASS-BEG-DTE - v.screen.ss_form1!dtp1_begdate.value
+'PASS-END-DTE - v.screen.ss_form1!dtp2_enddate.value
+'PASS-CNTRY-CD - v.screen.ss_form1!txt1_country.text
+'PASS-TAX-GRP - v.screen.ss_form1!txt1_taxcode.text
+'PASS-INCL-UNREC-FLG -  - v.screen.ss_form1!chk1_inclprior.value
+'PASS-RPT-ID - 000000000
+'PASS-IS-TRANS - "N"
+'
+'	PASS-IS-TRANS Parameter values
+'		Preliminary - 'N'
+'		Final - 'S'
+'		Reprint - 'N'
+
+F.Intrinsic.String.datestring(V.Screen.SS_Form1!dtp1_BegDate.value,V.Local.begdate)
+F.Intrinsic.String.datestring(V.Screen.SS_Form1!dtp2_endDate.value,V.Local.enddate)
+V.Local.summary.Set(V.Screen.SS_Form1!chk1_Summary.value)
+V.Local.detail.Set(V.Screen.SS_Form1!chk1_detail.value)
+V.Local.ecsales.Set(V.Screen.SS_Form1!chk1_ecsales.value)
+V.Local.country.Set(V.Screen.SS_Form1!txt1_country.text)
+V.Local.taxcode.Set(V.Screen.SS_Form1!txt1_taxcode.text)
+V.Local.inclprior.Set(V.Screen.SS_Form1!chk1_inclprior.value)
+V.Local.company.Set(V.caller.companycode)
+
+F.Global.Callwrapper.New("VATPrelim","Accounting.VATTaxReportingExtract")
+F.Global.Callwrapper.SetProperty("VATPrelim","RunID",V.Global.iBIRunID1)
+F.Global.Callwrapper.SetProperty("VATPrelim","RunType",0)
+F.Global.Callwrapper.SetProperty("VATPrelim","VATReturnReport",V.Local.summary)
+F.Global.Callwrapper.SetProperty("VATPrelim","VATDetailReport",V.Local.detail)
+F.Global.Callwrapper.SetProperty("VATPrelim","ECSalesReport",V.Local.ecsales)
+F.Global.Callwrapper.SetProperty("VATPrelim","StartDate",V.Local.BegDate)
+F.Global.Callwrapper.SetProperty("VATPrelim","EndDate",V.Local.EndDate)
+F.Global.Callwrapper.SetProperty("VATPrelim","CountryCode",V.Local.Country)
+F.Global.Callwrapper.SetProperty("VATPrelim","TaxGroup",V.Local.TaxCode)
+F.Global.Callwrapper.SetProperty("VATPrelim","IncludeUnreconciled",V.Local.InclPrior)
+F.Global.Callwrapper.SetProperty("VATPrelim","ReportID",000000000)
+F.Global.Callwrapper.SetProperty("VATPrelim","IsTransaction","N")
+
+F.Global.CallWrapper.Run("VATPrelim")
+F.Global.CallWrapper.GetProperty("VATPrelim","Status",V.Local.sStatus)	
+
+'F.Intrinsic.string.concat(V.local.company,"!*!!*!!*!E!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!00!*!",V.local.Summary,"!*!",V.local.detail,"!*!",V.local.ECSales,"!*!",V.local.BegDate,"!*!",V.local.EndDate,"!*!",V.local.country,"!*!",V.local.taxcode,"!*!",V.local.inclprior,"!*!000000000!*!N!*!",V.local.parameters)
+
+'Function.Global.General.CallWrapperSyncBIO(8000,V.Local.parameters)
+
+''===========================================================
+''split callwrapperreturn
+''===========================================================
+'F.Intrinsic.Control.If(V.Ambient.callwrapperReturn,<>,"")
+'V.Local.sSplitString.Set(V.ambient.callwrapperReturn)
+'F.Intrinsic.String.Split(V.Local.sSplitString,"*!*",V.Local.sretsplit)
+'F.Intrinsic.Control.For(V.Local.ic,0,V.Local.sretsplit.UBound,1)
+'	F.Intrinsic.String.Split(V.Local.sretsplit(v.Local.ic),"::",V.local.sretpiece)
+'		F.Intrinsic.Control.If(V.local.sretpiece(0),=,"RETURN")
+'		F.Intrinsic.Control.andIf(V.Local.sretpiece(1),<>,0)
+'			Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with callwrapper return code = ",V.local.sretpiece(1),V.Local.sError)
+'			F.Intrinsic.UI.Msgbox(V.Local.sError)
+'			F.Intrinsic.Control.CallSub(Ss_form1_unload)
+'	F.Intrinsic.Control.endIf
+'F.intrinsic.control.next(V.local.iC)
+'F.intrinsic.Control.endif
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("callWrapper_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+'End ==========================================================
+
+Program.Sub.CallWrapper.End
+
+program.sub.ss_form1_unload.start
+'Start ========================================================
+
+F.ODBC.Connection!conx.Close
+F.Intrinsic.Control.End
+
+'End ==========================================================
+
+program.sub.ss_form1_unload.End
+
+program.sub.cmd_txt1_country_click.start
+'Start ==========================================================
+' cmd_txt1_country_click
+'==============================================================
+
+'Country Code Browser
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sTitles.Declare(String)
+V.Local.sWidths.Declare(String)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.Control.SetErrorHandler("cmd_txt1_Country_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+
+'Select from country code
+    	V.local.ssql.set("Select code,Country from Country_Codes order by Code ")
+
+V.Local.sTitles.Set("Code*!*Country")
+V.Local.sWidths.Set("800*!*6250")
+
+F.Intrinsic.String.Split(V.Local.sTitles,"*!*",V.Local.sTitles)
+F.Intrinsic.String.Split(V.Local.sWidths,"*!*",V.Local.sWidths)
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+
+F.Intrinsic.UI.Browser("Select Country Code","conx",V.Local.sSql,V.Local.sTitles,V.Local.sWidths,200,1700,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.ss_form1.txt1_country.Text(V.Local.sRet.Trim)
+	Gui.SS_Form1.txt1_CntryName.Text(V.Local.sRet(1).Trim)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_txt1_Country_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+'End ==========================================================
+
+
+program.sub.cmd_txt1_country_click.End
+
+program.sub.cmd_txt1_taxcode_click.start
+'Start ==========================================================
+' cmd_txt1_taxcode_click
+'==============================================================
+
+'Tax Code Browser
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sTitles.Declare(String)
+V.Local.sWidths.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sCode.Declare(String)
+
+F.Intrinsic.Control.SetErrorHandler("cmd_txt1_Tax_code_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+F.Intrinsic.Control.If(V.Screen.SS_Form1!ddl1_Tax.listindex,=,0)
+
+    	V.local.ssql.set("Select zone, auth, descr from ar_tax_tables order by zone,auth ")
+
+	V.Local.sTitles.Set("Zone*!*Authority*!*Tax Code Description")
+	V.Local.sWidths.Set("800*!*800*!*6250")
+
+	F.Intrinsic.String.Split(V.Local.sTitles,"*!*",V.Local.sTitles)
+	F.Intrinsic.String.Split(V.Local.sWidths,"*!*",V.Local.sWidths)
+
+	F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+
+	F.Intrinsic.UI.Browser("Select Tax Code","conx",V.Local.sSql,V.Local.sTitles,V.Local.sWidths,200,1700,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		F.Intrinsic.String.Concat(V.Local.sRet(0).Trim,V.Local.sRet(1).Trim,V.Local.scode)
+		Gui.ss_form1.txt1_Taxcode.Text(V.Local.scode)
+		Gui.SS_Form1.txt1_TaxDesc.Text(V.Local.sRet(2).Trim)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.else
+
+F.Intrinsic.Control.If(V.Screen.SS_Form1!ddl1_Tax.listindex,=,1)
+
+    	V.local.ssql.set("Select grp_cd,Grp_desc from tax_group_rate order by grp_cd ")
+	V.Local.sTitles.Set("Group*!*Group Description")
+	V.Local.sWidths.Set("800*!*6250")
+
+	F.Intrinsic.String.Split(V.Local.sTitles,"*!*",V.Local.sTitles)
+	F.Intrinsic.String.Split(V.Local.sWidths,"*!*",V.Local.sWidths)
+
+	F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+
+	F.Intrinsic.UI.Browser("Select Group Rate","conx",V.Local.sSql,V.Local.sTitles,V.Local.sWidths,200,1700,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		Gui.ss_form1.txt1_taxcode.Text(V.Local.sRet.Trim)
+		Gui.SS_Form1.txt1_taxdesc.Text(V.Local.sRet(1).Trim)
+	F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_txt1_tax_code_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+'End ==========================================================
+
+program.sub.cmd_txt1_taxcode_click.End
+
+Program.Sub.Load_Droplist.Start
+'Start ==========================================================
+' Load_Droplist
+'==============================================================
+V.local.sError.declare(String)
+
+F.Intrinsic.Control.SetErrorHandler("Load_droplist_Err")
+F.Intrinsic.Control.ClearErrors
+
+Gui.SS_Form1.ddl1_Tax.AddItem("Tax Code",0)
+Gui.SS_Form1.ddl1_Tax.AddItem("Tax Group Code",1)
+
+'Gui.SS_Form1.ddl1_Tax.AddItem(V.translation.615300,0)
+'Gui.SS_Form1.ddl1_Tax.AddItem(V.translation.615306,1)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Load_Droplist_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Script: GCG_4182_Prelim_VAT_TAX_Reports.gas ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+'End ==========================================================
+
+Program.Sub.Load_Droplist.End
+
+Program.Sub.Select_BI_VAT_Detail_02.Start
+'Start ========================================================
+' Select_BI_VAT_Detail_02
+'============================================================
+V.Local.ic.Declare(Long)
+V.Local.squery.Declare(String)
+V.local.sSql.declare(String)
+V.local.sError.declare(String)
+
+F.Intrinsic.Control.SetErrorHandler("Select_BI_VAT_Detail_02_Err")
+F.Intrinsic.Control.ClearErrors
+
+' Select Detail records
+
+	V.local.squery.set("Select runid,key_box,key_type,key_tran_id,cust_vend,name,gl_acct,ref,ivc_date,descr,amt,recon_flg ")
+	F.Intrinsic.String.Concat(V.local.squery,"  from y_VAT_Detail_02 ",V.Local.squery)
+	F.Intrinsic.String.Concat(V.local.squery," where runid = '",V.Global.iBIRunID1,"' ",V.Local.squery)
+	F.Intrinsic.String.Concat(V.local.squery,"  order by key_Box,key_type,key_tran_id",V.Local.squery)
+
+	F.ODBC.Connection!conx.OpenRecordsetRW("rstdtl",V.Local.squery)
+    	F.Intrinsic.Variable.LoadUDTFromRecordset("conx","rstdtl","v.uGlobal.uDetail",True,0)
+        F.odbc.conx!rstdtl.close
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Select_BI_VAT_Detail_02_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Script: GCG_4182_Prelim_VAT_TAX_Reports.gas ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+
+'End ========================================================
+
+Program.Sub.Select_BI_VAT_Detail_02.End
+
+Program.Sub.Callbidetail.Start
+'Start ==========================================================
+' Callbidetail
+'==============================================================
+V.Local.sParams.Declare(String)
+V.Local.sValues.Declare(String)
+V.local.sError.declare(String)
+V.Local.sFile.Declare(String)
+V.Local.sReport.Declare(Long)
+
+F.Intrinsic.Control.SetErrorHandler("CallBIdetail_Err")
+F.Intrinsic.Control.ClearErrors
+
+F.Intrinsic.String.Build("{0}\GCG_4182_VAT_Tax_Return_Detail.rpt", v.Caller.BusintDir, v.Local.sFile)
+F.Global.BI.InitializeReport("VAT Tax Return Detail",v.Local.sFile,V.Local.sReport)
+'F.Global.BI.InitializeReport("VAT Tax Return Detail","f:\projects\ARVAT\busint\GCG_VAT_Tax_Return_Detail.rpt",V.Local.sReport)
+
+F.Intrinsic.String.Split("RunID*!*PreFin*!*StartDate*!*EndDate*!*InclPrior*!*Rptid","*!*",V.Local.sParams)
+V.local.svalues.set(V.Global.iBIRunID1)
+F.Intrinsic.String.Concat(V.local.sValues,"*!*","Preliminary",V.Local.sValues)
+F.Intrinsic.String.Concat(V.local.svalues,"*!*",V.Screen.SS_Form1!dtp1_BegDate.Value,V.Local.sValues)
+F.Intrinsic.String.Concat(V.Local.sValues,"*!*",V.Screen.ss_form1!dtp2_EndDate.value,V.Local.sValues)
+F.Intrinsic.String.Concat(V.Local.sValues,"*!*",V.Screen.ss_form1!chk1_InclPrior.value,V.Local.sValues)
+F.Intrinsic.String.Concat(V.local.sValues,"*!*",V.Local.sReport,V.Local.sValues)
+F.Intrinsic.String.Split(V.Local.sValues,"*!*",V.Local.sValues)
+
+F.Global.BI.PrintReport(V.Local.sReport,0,V.Local.sParams,V.Local.sValues,"",True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("CallBIdetail_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Script: GCG_4182_Prelim_VAT_TAX_Reports.gas ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+'End ==========================================================
+
+Program.Sub.Callbidetail.End
+
+Program.Sub.Select_BI_VAT_Summ_01.Start
+'Start ========================================================
+' Select_BI_VAT_Summ_01
+'============================================================
+V.Local.ic.Declare(Long)
+V.Local.squery.Declare(String)
+V.local.sSql.declare(String)
+V.local.sError.declare(String)
+
+F.Intrinsic.Control.SetErrorHandler("Select_BI_VAT_Summ_01_Err")
+F.Intrinsic.Control.ClearErrors
+
+' Select Summary records
+
+	V.local.squery.set("Select runID,key_type,amt ")
+	F.Intrinsic.String.Concat(V.local.squery,"  from Y_VAT_Summ_01 ",V.Local.squery)
+	F.Intrinsic.String.Concat(V.local.squery," where runid = '",V.Global.iBIRunID1,"' ",V.Local.squery)
+	F.Intrinsic.String.Concat(V.local.squery,"  order by key_type",V.Local.squery)
+
+	F.ODBC.Connection!conx.OpenRecordsetRW("rstsumm",V.Local.squery)
+    	F.Intrinsic.Variable.LoadUDTFromRecordset("conx","rstsumm","v.uGlobal.uSumm",True,0)
+        F.odbc.conx!rstSumm.close
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Select_BI_VAT_Summ_01_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Script: GCG_4182_Prelim_VAT_TAX_Reports.gas ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+
+'End ========================================================
+
+Program.Sub.Select_BI_VAT_Summ_01.End
+
+Program.Sub.Select_BI_VAT_Cust_03.Start
+'Start ========================================================
+' Select_BI_VAT_Cust_03
+'============================================================
+V.Local.ic.Declare(Long)
+V.Local.squery.Declare(String)
+V.local.sSql.declare(String)
+V.local.sError.declare(String)
+
+F.Intrinsic.Control.SetErrorHandler("Select_BI_VAT_Cust_03_Err")
+F.Intrinsic.Control.ClearErrors
+
+' Select Summary records
+
+	V.local.squery.set("Select runid,name,nit_no,amt ")
+	F.Intrinsic.String.Concat(V.local.squery,"  from Y_VAT_Cust_03 ",V.Local.squery)
+	F.Intrinsic.String.Concat(V.local.squery," where runid = '",V.Global.iBIRunID1,"' ",V.Local.squery)
+	F.Intrinsic.String.Concat(V.local.squery,"  order by name",V.Local.squery)
+
+	F.ODBC.Connection!conx.OpenRecordsetRW("rstcust",V.Local.squery)
+    	F.Intrinsic.Variable.LoadUDTFromRecordset("conx","rstcust","v.uGlobal.uCust",True,0)
+        F.odbc.conx!rstCust.close
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Select_BI_VAT_Cust_03_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Script: GCG_4182_Prelim_VAT_TAX_Reports.gas ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+
+'End ========================================================
+
+Program.Sub.Select_BI_VAT_Cust_03.End
+
+Program.Sub.Callbisummary.Start
+'Start ==========================================================
+' Callbisummary
+'==============================================================
+V.Local.sParams.Declare(String)
+V.Local.sValues.Declare(String)
+V.local.sError.declare(String)
+V.Local.sFile.Declare(String)
+V.Local.sReport.Declare(Long)
+
+F.Intrinsic.Control.SetErrorHandler("CallBIsummary_Err")
+F.Intrinsic.Control.ClearErrors	
+F.Intrinsic.String.Build("{0}\GCG_4182_VAT_Tax_Return_Summary.rpt", v.Caller.BusintDir, v.Local.sFile)
+F.Global.BI.InitializeReport("VAT Tax Return Summary",v.Local.sFile,V.Local.sReport)
+'F.Global.BI.InitializeReport("VAT Tax Return Summary","f:\projects\ARVAT\busint\GCG_VAT_Tax_Return_Summary.rpt",V.Local.sReport)
+
+F.Intrinsic.String.Split("RunID*!*PreFin*!*StartDate*!*EndDate*!*InclPrior*!*Rptid","*!*",V.Local.sParams)
+V.local.svalues.set(V.Global.iBIRunID1)
+F.Intrinsic.String.Concat(V.local.sValues,"*!*","Preliminary",V.Local.sValues)
+F.Intrinsic.String.Concat(V.local.svalues,"*!*",V.Screen.SS_Form1!dtp1_BegDate.Value,V.Local.sValues)
+F.Intrinsic.String.Concat(V.Local.sValues,"*!*",V.Screen.ss_form1!dtp2_EndDate.value,V.Local.sValues)
+F.Intrinsic.String.Concat(V.Local.sValues,"*!*",V.Screen.ss_form1!chk1_InclPrior.value,V.Local.sValues)
+F.Intrinsic.String.Concat(V.local.sValues,"*!*",V.Local.sReport,V.Local.sValues)
+F.Intrinsic.String.Split(V.Local.sValues,"*!*",V.Local.sValues)
+
+F.Global.BI.PrintReport(V.Local.sReport,0,V.Local.sParams,V.Local.sValues,"",True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("CallBIsummary_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Script: GCG_4182_Prelim_VAT_TAX_Reports.gas ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+
+'End ==========================================================
+
+Program.Sub.Callbisummary.End
+
+Program.Sub.Callbiecsales.Start
+'Start ==========================================================
+' Callbiecsales
+'==============================================================
+V.Local.sParams.Declare(String)
+V.Local.sValues.Declare(String)
+V.local.sError.declare(String)
+V.Local.sReport.Declare(Long)
+V.Local.sFile.Declare(String)
+
+F.Intrinsic.Control.SetErrorHandler("CallBIecsales_Err")
+F.Intrinsic.Control.ClearErrors
+
+F.Intrinsic.String.Build("{0}\GCG_4182_VAT_ECSales.rpt", v.Caller.BusintDir, v.Local.sFile)
+F.Global.BI.InitializeReport("EC Sales List",v.Local.sFile,V.Local.sReport)
+'F.Global.BI.InitializeReport("EC Sales List","f:\projects\arvat\busint\GCG_VAT_ECSales.rpt",V.Local.sReport)
+
+F.Intrinsic.String.Split("RunID*!*PreFin*!*StartDate*!*EndDate*!*Rptid","*!*",V.Local.sParams)
+V.local.svalues.set(V.Global.iBIRunID1)
+F.Intrinsic.String.Concat(V.local.sValues,"*!*","Preliminary",V.Local.sValues)
+F.Intrinsic.String.Concat(V.local.svalues,"*!*",V.Screen.SS_Form1!dtp1_BegDate.Value,V.Local.sValues)
+F.Intrinsic.String.Concat(V.Local.sValues,"*!*",V.Screen.ss_form1!dtp2_EndDate.value,V.Local.sValues)
+F.Intrinsic.String.Concat(V.local.sValues,"*!*",V.Local.sReport,V.Local.sValues)
+F.Intrinsic.String.Split(V.Local.sValues,"*!*",V.Local.sValues)
+
+F.Global.BI.PrintReport(V.Local.sReport,0,V.Local.sParams,V.Local.sValues,"",True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("CallBIecsales_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Script: GCG_4182_Prelim_VAT_TAX_Reports.gas ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+'End ==========================================================
+
+Program.Sub.Callbiecsales.End
+
+Program.Sub.Build_Z_tables.Start
+'Start ========================================================
+' Build_Z_tables
+'============================================================
+V.local.sSql.declare(String)
+V.local.sret.declare(String)
+V.local.sError.declare(String)
+V.Local.iC.Declare(Long)
+V.Local.dTemp.Declare(Date)
+
+'Disappear the screen
+Gui.SS_Form1..Visible(False)
+F.Intrinsic.Control.SetErrorHandler("Build_Z_Tables_Err")
+F.Intrinsic.Control.ClearErrors
+
+'=========================================================================
+'open Z table and delete records for this terminal
+F.ODBC.Connection!conx.OpenRecordsetRW("rstzSumm","GCG_4182_VAT_SUMM_01")
+
+F.Intrinsic.Control.If(V.uGlobal.uSumm.Ubound,<>,-1)
+   		F.Intrinsic.Variable.saveudttorecordset("conx","rstzSumm","v.uglobal.uSumm")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.conx!rstzSumm.Close
+
+F.ODBC.Connection!conx.OpenRecordsetRW("rstzDetail","GCG_4182_VAT_Dtl_02")
+
+F.Intrinsic.Control.If(V.uGlobal.uDetail.Ubound,<>,-1)
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uDetail!iRunID,"RunID")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uDetail!sGL_Acct,"GL_Account")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uDetail!sRef,"Reference")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uDetail!sIVC_Date,"")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uDetail!dIVC_Date,"Invoice_Date")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uDetail!sDescr,"Description")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uDetail!fAmt,"Amount")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uDetail!sRecon_Flg,"Recon_Flag")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uDetail!sType_Abb,"Type_Abb")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uDetail!sType_Name,"Type_Name")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uDetail!sTaxCode,"TaxCode")
+	
+	F.Intrinsic.Control.For(V.Local.iC,0,V.uGlobal.uDetail.UBound,1)
+		F.Intrinsic.Date.ConvertDString(V.uGlobal.uDetail(V.Local.iC)!sIVC_Date,"YYYYMMDD",V.Local.dTemp)
+		V.uGlobal.uDetail(V.Local.iC)!dIVC_Date.Set(V.Local.dTemp)
+	F.Intrinsic.Control.Next(V.Local.iC)
+	
+   	F.Intrinsic.Variable.saveudttorecordset("conx","rstzDetail","v.uglobal.uDetail")
+F.Intrinsic.Control.EndIf
+F.ODBC.conx!rstzDetail.Close
+
+F.ODBC.Connection!conx.OpenRecordsetRW("rstzCust","GCG_4182_VAT_CUST_03")
+
+F.Intrinsic.Control.If(V.uGlobal.uCust.Ubound,<>,-1)
+	F.Intrinsic.Variable.SetUDTFieldReference(v.uGlobal.uCust!iRunID, "RunID")
+	F.Intrinsic.Variable.SetUDTFieldReference(v.uGlobal.uCust!sNit_no, "NIT_Number")
+	F.Intrinsic.Variable.SetUDTFieldReference(v.uGlobal.uCust!fAmt, "Amount")
+	
+   	F.Intrinsic.Variable.saveudttorecordset("conx","rstzCust","v.uglobal.uCust")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.conx!rstzCust.Close
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Build_Z_Tables_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Script: GCG_4182_Prelim_VAT_TAX_Reports.gas ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.Build_Z_tables.End
+
+program.sub.txt1_taxcode_lostfocus.start
+V.local.sSql.declare(String)
+V.local.staxcd.declare(String)
+
+V.Local.staxcd.set(V.screen.SS_Form1!txt1_taxcode.text)
+
+F.intrinsic.string.concat("Select zone + auth as Zoneauth ,descr from ar_tax_tables  where zoneauth = '",V.LOCAL.staxcd,"'   ",V.Local.ssql)
+F.ODBC.Connection!conx.OpenRecordsetRW("rsttaxdesc",V.Local.ssql)
+	F.Intrinsic.Control.If(V.ODBC.conx!rsttaxdesc.EOF,=,False)
+		Gui.SS_Form1.txt1_Taxdesc.Text(V.ODBC.conx!rsttaxdesc.FieldVal!Descr)
+	F.Intrinsic.Control.else
+		Gui.SS_Form1.txt1_Taxdesc.Text("Tax Code/Group Not Found")
+	F.Intrinsic.Control.endif
+F.ODBC.Conx!rsttaxdesc.Close
+
+
+
+
+
+program.sub.txt1_taxcode_lostfocus.End
+
+program.sub.txt1_country_lostfocus.start
+V.local.sSql.declare(String)
+V.local.scntry.declare(String)
+
+V.Local.scntry.set(V.screen.SS_Form1!txt1_Country.Text)
+
+F.intrinsic.string.concat("Select Country from Country_Codes where code = '",V.LOCAL.scntry,"' ",V.Local.ssql)
+F.ODBC.Connection!conx.OpenRecordsetRW("rstcntry",V.Local.ssql)
+	F.Intrinsic.Control.If(V.ODBC.conx!rstcntry.EOF,=,False)
+		Gui.SS_Form1.txt1_CntryName.Text(V.ODBC.conx!rstcntry.FieldVal!Country)
+	F.Intrinsic.Control.else
+		Gui.SS_Form1.txt1_CntryName.Text("Country Not Found")
+	F.Intrinsic.Control.endif
+F.ODBC.Conx!rstcntry.Close
+
+
+program.sub.txt1_country_lostfocus.End
+
+Program.Sub.ScreenSS.Start
+SS_Form1{{CAPTION::Preliminary VAT Tax Return Reports
+SS_Form1.CTRL{{NAME::dtp1_Begdate\\TYPE::6\\CAPTION::Beginning Date\\TABSTOP::1\\GROUP::2\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::dtp2_Enddate\\TYPE::6\\CAPTION::Ending Date\\TABSTOP::2\\GROUP::2\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::txt1_Country\\TYPE::2\\CAPTION::VAT Country Code\\GROUP::-1\\BROWSER::1\\SIZE::1
+SS_Form1.CTRL{{NAME::txt1_CntryName\\TYPE::2\\GROUP::-1\\BROWSER::0\\SIZE::3
+SS_Form1.CTRL{{NAME::ddl1_Tax\\TYPE::4\\GROUP::-1\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::txt1_Taxcode\\TYPE::2\\CAPTION::Code\\GROUP::-1\\BROWSER::1\\SIZE::1
+SS_Form1.CTRL{{NAME::txt1_Taxdesc\\TYPE::2\\GROUP::-1\\BROWSER::0\\SIZE::3
+SS_Form1.CTRL{{NAME::chk1_InclPrior\\TYPE::9\\CAPTION::Include Prior Unreconciled\\TABSTOP::3\\GROUP::-1\\BROWSER::0\\SIZE::3
+SS_Form1.CTRL{{NAME::lbl1_Select\\TYPE::1\\CAPTION::Select Report Type\\GROUP::-1\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::chk1_Detail\\TYPE::9\\CAPTION::VAT Return Detail\\TABSTOP::4\\GROUP::-1\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::chk1_Summary\\TYPE::9\\CAPTION::VAT Return Summary\\TABSTOP::5\\GROUP::-1\\BROWSER::0\\SIZE::2
+SS_Form1.CTRL{{NAME::chk1_ECSales\\TYPE::9\\CAPTION::EC Sales List\\TABSTOP::6\\GROUP::-1\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::cmd1_Print\\TYPE::5\\CAPTION::Print\\TABSTOP::7\\GROUP::-1\\BROWSER::0\\SIZE::1
+
+Program.Sub.ScreenSS.End
+
+Program.Sub.Comments.Start
+${$0$}$$}$$}$12:00:00 AM$}$False
+Program.Sub.Comments.End
